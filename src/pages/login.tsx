@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaSadCry } from "react-icons/fa";
 import logo from "../assets/logo.png";
-import lom from "../assets/zelle.webp";
+// import lom from "../assets/zelle.webp";
 import { loginUser } from "../backend/api"; // We'll add this function in api.ts
 
 const LoginForm: React.FC = () => {
@@ -136,8 +136,16 @@ const LoginForm: React.FC = () => {
                 Forgot ID/Password
               </a>
             </div>
+            <div className="m-auto flex justify-center mt-4">
+              <Link
+                to={'/signup'}
+                className="text-red-600 text-sm hover:underline"
+              >
+                Create an account
+              </Link>
+            </div>
 
-            <img src={lom} alt="Zelle" className="mt-9" />
+            {/* <img src={lom} alt="Zelle" className="mt-9" /> */}
           </div>
         </div>
       )}

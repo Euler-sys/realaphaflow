@@ -199,6 +199,7 @@ const AdminPage: React.FC = () => {
 
             {/* USER FIELDS */}
             <div className="grid grid-cols-2 gap-4 mb-4">
+              <label htmlFor="">Fullname</label>
               <input
                 type="text"
                 value={editingUser.full_name}
@@ -208,6 +209,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="Full Name"
               />
+               <label htmlFor="">Username</label>
               <input
                 type="text"
                 value={editingUser.username}
@@ -217,6 +219,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="Username"
               />
+               <label htmlFor="">Email</label>
               <input
                 type="email"
                 value={editingUser.email}
@@ -226,6 +229,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="Email"
               />
+               <label htmlFor="">Password</label>
               <input
                 type="password"
                 value={editingUser.newPassword || ""}
@@ -238,6 +242,7 @@ const AdminPage: React.FC = () => {
                 placeholder="New Password"
                 className="border p-2"
               />
+               <label htmlFor="">Amount</label>
               <input
                 type="number"
                 value={editingUser.amount}
@@ -250,6 +255,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="Amount"
               />
+               <label htmlFor="">Pin</label>
               <input
                 type="text"
                 value={editingUser.pin}
@@ -259,6 +265,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="Pin"
               />
+               <label htmlFor="">BTC WALLET</label>
               <input
                 type="text"
                 value={editingUser.btc_wallet || ""}
@@ -268,6 +275,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="BTC Wallet"
               />
+               <label htmlFor="">ETH Wallet</label>
               <input
                 type="text"
                 value={editingUser.eth_wallet || ""}
@@ -277,6 +285,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="ETH Wallet"
               />
+               <label htmlFor="">USDT Wallet</label>
               <input
                 type="text"
                 value={editingUser.usdt_wallet || ""}
@@ -289,6 +298,7 @@ const AdminPage: React.FC = () => {
                 className="border p-2"
                 placeholder="USDT Wallet"
               />
+               <label htmlFor="">TIER</label>
               <select
                 value={editingUser.account_tier}
                 onChange={(e) =>

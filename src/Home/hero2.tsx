@@ -19,19 +19,19 @@ const HeroSection = () => {
             ALPHA FLOW <br /> REWARDS — <br /> EVERYDAY!
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            className="text-gray-700 mb-6 text-base lg:text-lg"
-          >
-            The <strong>Alpha Flow Visa Credit Card</strong> just got even
-            better! Earn <strong>4X points</strong> on entertainment, travel,
-            and wholesale clubs; <strong>3X points</strong> on dining, gas, and
-            groceries; and <strong>2X points</strong> on everything else. Enjoy
-            perks like Amazon Prime subscription reimbursement* and redeem
-            rewards for cash back or statement credit.
-          </motion.p>
+  <motion.p
+  initial={{ opacity: 0, x: -30 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.9, delay: 0.3 }}
+  className="text-gray-700 mb-6 text-base lg:text-lg"
+>
+  The <strong>Alpha Flow Investment Portfolio</strong> just got even
+  better! Earn <strong>4X returns</strong> on strategic sectors like
+  entertainment, travel, and wholesale markets; <strong>3X returns</strong> on
+  dining, energy, and consumer goods; and steady growth on diversified
+  assets. Enjoy premium benefits, flexible withdrawals, and the ability to
+  reinvest earnings for long-term wealth building.
+</motion.p>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
