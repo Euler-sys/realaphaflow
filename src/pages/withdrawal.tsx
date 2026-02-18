@@ -102,7 +102,7 @@ const WithdrawalPage: React.FC = () => {
               Enter Withdrawal Amount
             </h2>
             <p className="mb-4">
-              Available Balance: ${Number(currentUser.amount).toLocaleString()}
+              Total Investment: ${Number(currentUser.amount).toLocaleString()}
             </p>
             <input
               type="number"

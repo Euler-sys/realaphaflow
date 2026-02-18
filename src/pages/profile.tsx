@@ -31,58 +31,74 @@ const ProfilePage: React.FC = () => {
 
   return (
     <>
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-lg mt-8">
-      {/* Header */}
-      <div className="flex flex-col items-center">
-        <img
-          src={person}
-          alt="Profile"
-          className="w-24 h-24 rounded-full border-4 border-red-600 mb-4"
-        />
-        <h1 className="text-2xl font-bold">{user.full_name}</h1>
-        <p className="text-gray-500">@{user.username}</p>
-        <span className="mt-2 px-4 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold">
-          {user.account_tier} Tier
-        </span>
-      </div>
+      <div className="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-lg mt-8">
+        {/* Header */}
+        <div className="flex flex-col items-center">
+          <img
+            src={person}
+            alt="Profile"
+            className="w-24 h-24 rounded-full border-4 border-red-600 mb-4"
+          />
+          <h1 className="text-2xl font-bold">{user.full_name}</h1>
+          <p className="text-gray-500">@{user.username}</p>
+          <span className="mt-2 px-4 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold">
+            {user.account_tier} Tier
+          </span>
+        </div>
 
-      {/* Account Info */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-4 border rounded-lg shadow-sm">
-          <h2 className="text-gray-600 text-sm font-semibold mb-2">Email</h2>
-          <p className="text-gray-800">{user.email}</p>
+        {/* Account Info */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h2 className="text-gray-600 text-sm font-semibold mb-2">Email</h2>
+            <p className="text-gray-800">{user.email}</p>
+          </div>
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h2 className="text-gray-600 text-sm font-semibold mb-2">
+              Total Investment
+            </h2>
+            <p className="text-gray-800 text-lg font-bold">
+              {new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+              }).format(Number(user.amount))}
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h2 className="text-gray-600 text-sm font-semibold mb-2">
+              Bitcoin Wallet
+            </h2>
+            <p className="text-gray-800 font-mono truncate">
+              {user.btc_wallet}
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h2 className="text-gray-600 text-sm font-semibold mb-2">
+              Ethereum Wallet
+            </h2>
+            <p className="text-gray-800 font-mono truncate">
+              {user.eth_wallet}
+            </p>
+          </div>
+          <div className="p-4 border rounded-lg shadow-sm">
+            <h2 className="text-gray-600 text-sm font-semibold mb-2">
+              USDT Wallet
+            </h2>
+            <p className="text-gray-800 font-mono truncate">
+              {user.usdt_wallet}
+            </p>
+          </div>
         </div>
-        <div className="p-4 border rounded-lg shadow-sm">
-          <h2 className="text-gray-600 text-sm font-semibold mb-2">Available Balance</h2>
-          <p className="text-gray-800 text-lg font-bold">
-            {new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD",
-            }).format(Number(user.amount))}
-          </p>
-        </div>
-        <div className="p-4 border rounded-lg shadow-sm">
-          <h2 className="text-gray-600 text-sm font-semibold mb-2">Bitcoin Wallet</h2>
-          <p className="text-gray-800 font-mono truncate">{user.btc_wallet}</p>
-        </div>
-        <div className="p-4 border rounded-lg shadow-sm">
-          <h2 className="text-gray-600 text-sm font-semibold mb-2">Ethereum Wallet</h2>
-          <p className="text-gray-800 font-mono truncate">{user.eth_wallet}</p>
-        </div>
-        <div className="p-4 border rounded-lg shadow-sm">
-          <h2 className="text-gray-600 text-sm font-semibold mb-2">USDT Wallet</h2>
-          <p className="text-gray-800 font-mono truncate">{user.usdt_wallet}</p>
-        </div>
-      </div>
 
-      {/* Optional: Transaction count */}
-      <div className="mt-8 p-4 border rounded-lg shadow-sm mb-[100px]">
-        <h2 className="text-gray-600 text-sm font-semibold mb-2">Total Transactions</h2>
-        <p className="text-gray-800">{user.transactions?.length || 0}</p>
+        {/* Optional: Transaction count */}
+        <div className="mt-8 p-4 border rounded-lg shadow-sm mb-[100px]">
+          <h2 className="text-gray-600 text-sm font-semibold mb-2">
+            Total Transactions
+          </h2>
+          <p className="text-gray-800">{user.transactions?.length || 0}</p>
+        </div>
       </div>
-    </div>
-<BottomNav/>
-<BottomNav2/>
+      <BottomNav />
+      <BottomNav2 />
     </>
   );
 };

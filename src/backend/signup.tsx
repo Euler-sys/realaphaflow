@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { addUser } from "./api"; // ✅ import your API function
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const [form, setForm] = useState({
@@ -46,7 +47,7 @@ export default function Signup() {
       });
 
       if (res.success) {
-        setPopup(`✅ ${res.message}`);
+        setPopup(`✅Account Created`);
         setForm({
           full_name: "",
           username: "",
@@ -75,6 +76,7 @@ export default function Signup() {
         {popup && (
           <div className="mb-4 p-3 rounded-lg text-white bg-red-500 text-center">
             {popup}
+            <p><Link to={'/login'} className="underline text-xl">Login now</Link></p>
           </div>
         )}
 
