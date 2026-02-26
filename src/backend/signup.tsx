@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { addUser } from "./api"; // ✅ import your API function
 import { Link } from "react-router-dom";
+import Header from "../Home/header";
+import Footer from "../Home/footer";
 
 export default function Signup() {
   const [form, setForm] = useState({
@@ -69,8 +71,10 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+    <>
+    <Header/>
+    <div className="min-h-screen  flex items-center justify-center bg-gray-100">
+      <div className="bg-white  mt-[140px] p-8 rounded-2xl shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Create Account</h2>
 
         {popup && (
@@ -92,11 +96,12 @@ export default function Signup() {
           <input type="text" name="eth_wallet" placeholder="ETH Wallet (optional)" value={form.eth_wallet} onChange={handleChange} className="w-full p-3 border rounded-lg" />
           <input type="text" name="usdt_wallet" placeholder="USDT Wallet (optional)" value={form.usdt_wallet} onChange={handleChange} className="w-full p-3 border rounded-lg" />
 
-          <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+          <button type="submit" className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
             Sign Up
           </button>
         </form>
       </div>
     </div>
+    <Footer/></>
   );
 }
