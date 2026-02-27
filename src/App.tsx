@@ -23,6 +23,7 @@ import InboxPage from "./components/inbox";
 import WithdrawalPage from "./pages/withdrawal";
 import ProfilePage from "./pages/profile";
 import WalletPage from "./pages/wallet";
+import VerifyPage from "./pages/verify";
 
 const App: React.FC = () => {
   //  const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
@@ -31,7 +32,8 @@ const App: React.FC = () => {
     <Router>
       <div className="font-sans">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<VerifyPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/signup" element={<SignUp />} />
