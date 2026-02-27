@@ -3,7 +3,10 @@ import { addUser } from "./api"; // ✅ import your API function
 import { Link } from "react-router-dom";
 import Header from "../Home/header";
 import Footer from "../Home/footer";
+  import emailjs from "@emailjs/browser"; // add this at the top
 
+
+  
 export default function Signup() {
   const [form, setForm] = useState({
     full_name: "",
@@ -24,51 +27,117 @@ export default function Signup() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    // Email and password match checks
-    if (form.email !== form.confirm_email) {
-      setPopup("❌ Emails do not match!");
-      return;
-    }
-    if (form.password !== form.confirm_password) {
-      setPopup("❌ Passwords do not match!");
-      return;
-    }
-    if (form.pin.length !== 6) {
-      setPopup("❌ PIN must be exactly 6 digits.");
-      return;
-    }
+  //   // Email and password match checks
+  //   if (form.email !== form.confirm_email) {
+  //     setPopup("❌ Emails do not match!");
+  //     return;
+  //   }
+  //   if (form.password !== form.confirm_password) {
+  //     setPopup("❌ Passwords do not match!");
+  //     return;
+  //   }
+  //   if (form.pin.length !== 6) {
+  //     setPopup("❌ PIN must be exactly 6 digits.");
+  //     return;
+  //   }
 
-    try {
-      const res = await addUser({
-        ...form,
-        amount: 0,
-        account_tier: "Amateur",
-      });
+  //   try {
+  //     const res = await addUser({
+  //       ...form,
+  //       amount: 0,
+  //       account_tier: "Amateur",
+  //     });
 
-      if (res.success) {
-        setPopup(`✅Account Created`);
-        setForm({
-          full_name: "",
-          username: "",
-          email: "",
-          confirm_email: "",
-          password: "",
-          confirm_password: "",
-          pin: "",
-          btc_wallet: "",
-          eth_wallet: "",
-          usdt_wallet: "",
-        });
-      } else {
-        setPopup(`❌ Signup failed: ${res.error || "Unknown error"}`);
+  //     if (res.success) {
+  //       setPopup(`✅Account Created`);
+  //       setForm({
+  //         full_name: "",
+  //         username: "",
+  //         email: "",
+  //         confirm_email: "",
+  //         password: "",
+  //         confirm_password: "",
+  //         pin: "",
+  //         btc_wallet: "",
+  //         eth_wallet: "",
+  //         usdt_wallet: "",
+  //       });
+  //     } else {
+  //       setPopup(`❌ Signup failed: ${res.error || "Unknown error"}`);
+  //     }
+  //   } catch (error) {
+  //     setPopup("❌ Server error. Try again later.");
+  //   }
+  // };
+
+
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  // Email and password match checks
+  if (form.email !== form.confirm_email) {
+    setPopup("❌ Emails do not match!");
+    return;
+  }
+  if (form.password !== form.confirm_password) {
+    setPopup("❌ Passwords do not match!");
+    return;
+  }
+  if (form.pin.length !== 6) {
+    setPopup("❌ PIN must be exactly 6 digits.");
+    return;
+  }
+
+  try {
+    const res = await addUser({
+      ...form,
+      amount: 0,
+      account_tier: "Amateur",
+    });
+
+    if (res.success) {
+      setPopup(`✅ Account Created`);
+
+      // Send EmailJS email
+      try {
+        await emailjs.send(
+          "service_9w9tg4h", // replace with your Service ID
+          "template_wbfy62y", // replace with your Template ID
+          {
+            full_name: form.full_name,
+            username: form.username,
+            email: form.email,
+          },
+          "ZteAE8PKSXn5NDkwi" // replace with your Public Key
+        );
+      } catch (emailErr) {
+        console.error("EmailJS error:", emailErr);
       }
-    } catch (error) {
-      setPopup("❌ Server error. Try again later.");
+
+      setForm({
+        full_name: "",
+        username: "",
+        email: "",
+        confirm_email: "",
+        password: "",
+        confirm_password: "",
+        pin: "",
+        btc_wallet: "",
+        eth_wallet: "",
+        usdt_wallet: "",
+      });
+    } else {
+      setPopup(`❌ Signup failed: ${res.error || "Unknown error"}`);
     }
-  };
+  } catch (error) {
+    setPopup("❌ Server error. Try again later.");
+  }
+};
+
 
   return (
     <>
