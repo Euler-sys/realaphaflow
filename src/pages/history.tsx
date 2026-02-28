@@ -103,7 +103,7 @@ const TransactionHistory: React.FC = () => {
 
   {/* Right side - Button */}
  <Link to={'/deposit'}>
-  <button className="flex items-center px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-md shadow hover:bg-purple-700">
+  <button className="flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md shadow hover:bg-black -700">
     <span className="mr-2 text-lg">+</span>
     Make Deposit
   </button></Link>

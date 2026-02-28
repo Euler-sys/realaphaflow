@@ -7,6 +7,7 @@ import DepositHistory from "../pages/DepositHistory";
 import btcBarcode from "../assets/btc.jpg";
 import ethBarcode from "../assets/eth.jpg";
 import usdtBarcode from "../assets/usdt.jpg";
+import Headerr from "../pages/header2";
 
 interface Transaction {
   id?: number;
@@ -110,6 +111,7 @@ const DepositsPage: React.FC = () => {
 
   return (
     <>
+    <Headerr/>
       <div className="p-6 max-w-3xl mx-auto bg-white shadow-lg rounded-xl mb-[100px]">
         
         {/* STEP 1 */}

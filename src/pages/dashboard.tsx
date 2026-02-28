@@ -20,7 +20,7 @@ import {
 // } from 'react-icons/fa';
 import lol from "../assets/logo.png";
 import { FaRegCopy, FaEye, FaArrowUpRightFromSquare } from "react-icons/fa6";
-import bg from "../assets/her2.jpg"; // your uploaded image
+import bg from "../assets/her22.jpg"; // your uploaded image
 // import StatComponent from "../components/stats";
 // import BottomNav from "./stickyNav";
 import person from "../assets/person_1.jpg";

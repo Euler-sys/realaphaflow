@@ -4,6 +4,7 @@ import BottomNav from "../pages/stickyNav";
 import BottomNav2 from "../pages/bottomnav2";
 // import TransactionHistory from "../pages/history";
 import InvestmentHistory from "./investmentHistory";
+import Headerr from "../pages/header2";
 
 interface Transaction {
   id?: number;
@@ -101,6 +102,7 @@ const PaymentPage: React.FC = () => {
 
   return (
     <>
+  <Headerr/>
     
     <div className="p-6 max-w-3xl mx-auto bg-white shadow-lg rounded-xl mb-[100px]">
       {step === 1 && (

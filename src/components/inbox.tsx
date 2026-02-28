@@ -2,6 +2,7 @@ import { useState } from "react";
 import { TrendingUp, DollarSign, AlertTriangle, Info, CheckCircle } from "lucide-react";
 import BottomNav from "../pages/stickyNav";
 import BottomNav2 from "../pages/bottomnav2";
+import Headerr from "../pages/header2";
 
 type Message = {
   id: number;
@@ -13,55 +14,61 @@ type Message = {
   unread: boolean;
 };
 
+const currentDate = new Date().toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 const messages: Message[] = [
   {
     id: 1,
     icon: <TrendingUp className="text-green-600" size={24} />,
-    subject: "Portfolio Growth Alert",
-    preview: "Your investment portfolio gained +12% this month.",
-    full: `📈 Great news!  
-Your investment portfolio has grown by **12%** over the last 30 days, driven mainly by your crypto and stock allocations. Keep monitoring your dashboard for real-time updates.`,
-    date: "July 5, 2025",
+    subject: "Investment Performance Update",
+    preview: "Your active plans are showing steady growth.",
+    full: `📈 Your Alphaflow investment portfolio continues to perform steadily.
+Market conditions remain favorable, and your active investment plans are generating consistent daily returns. Stay updated through your dashboard for performance insights.`,
+    date: currentDate,
     unread: true,
   },
   {
     id: 2,
     icon: <DollarSign className="text-yellow-500" size={24} />,
-    subject: "New Investment Plan Available",
-    preview: "We’ve launched a new high-yield plan starting at $500.",
-    full: `🚀 A new investment plan is now live!  
-You can now start investing with as little as **$500** in our High-Yield Growth Plan. This plan offers competitive returns with flexible withdrawal options.`,
-    date: "July 3, 2025",
+    subject: "New Growth Opportunities",
+    preview: "Explore upgraded investment plans with higher returns.",
+    full: `🚀 Alphaflow has optimized several investment strategies to improve earning potential.
+Users can now diversify across multiple plans to maximize long-term portfolio growth while maintaining flexibility.`,
+    date: currentDate,
     unread: true,
   },
   {
     id: 3,
     icon: <AlertTriangle className="text-red-600" size={24} />,
-    subject: "Market Volatility Notice",
-    preview: "Crypto and tech stocks are experiencing higher volatility.",
-    full: `⚠️ Market Update:  
-The past week has seen increased volatility in **crypto** and **tech stocks**. Consider reviewing your risk profile and adjusting your portfolio allocation if needed.`,
-    date: "July 1, 2025",
+    subject: "Market Insight Notice",
+    preview: "Digital asset markets are showing increased movement.",
+    full: `⚠️ Market Insight:
+Recent movements across global financial and digital asset markets may create new investment opportunities. Monitoring diversification and reinvestment strategies is recommended.`,
+    date: currentDate,
     unread: true,
   },
   {
     id: 4,
     icon: <Info className="text-blue-500" size={24} />,
-    subject: "New Feature: Auto-Reinvest",
-    preview: "Automatically reinvest your profits into active plans.",
-    full: `💡 We’ve introduced **Auto-Reinvest**.  
-You can now set your profits to be automatically reinvested into your active plans, helping your money grow faster without manual action.`,
-    date: "June 29, 2025",
+    subject: "Portfolio Optimization Tips",
+    preview: "Diversification helps improve investment stability.",
+    full: `💡 Investment Tip:
+Spreading funds across Amateur, Advanced, Professional, and VIP plans can help balance risk while improving overall portfolio performance over time.`,
+    date: currentDate,
     unread: false,
   },
   {
     id: 5,
     icon: <CheckCircle className="text-green-500" size={24} />,
-    subject: "Withdrawal Successful",
-    preview: "Your recent withdrawal request has been processed.",
-    full: `✅ Success!  
-Your withdrawal has been processed successfully and the funds have been transferred to your selected wallet.`,
-    date: "June 25, 2025",
+    subject: "Platform Growth Update",
+    preview: "Alphaflow continues expanding investment solutions.",
+    full: `✅ Platform Update:
+Alphaflow continues to enhance investment infrastructure to support faster performance tracking, improved analytics, and smarter investment management tools for all users.`,
+    date: currentDate,
     unread: false,
   },
 ];
@@ -71,6 +78,7 @@ const InboxPage = () => {
 
   return (
     <>
+    <Headerr/>
       <div className="max-w-3xl mx-auto p-6">
         <h1 className="text-2xl font-bold mb-6 text-red-800 text-center"> Inbox </h1>
 
