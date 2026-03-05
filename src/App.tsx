@@ -24,6 +24,7 @@ import WithdrawalPage from "./pages/withdrawal";
 import ProfilePage from "./pages/profile";
 import WalletPage from "./pages/wallet";
 import VerifyPage from "./pages/verify";
+import SupportChat from "./pages/support";
 
 const App: React.FC = () => {
   //  const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
@@ -162,6 +163,7 @@ const App: React.FC = () => {
           />
         </Routes>
       </div>
+      <SupportChat/>
     </Router>
   );
 };
