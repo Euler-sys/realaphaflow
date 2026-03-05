@@ -27,7 +27,7 @@ const SupportChat: React.FC = () => {
       {/* Sticky chat icon */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-5 right-5 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-50"
+        className="fixed bottom-5 right-5 bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition z-50"
       >
         <FiMessageCircle size={24} />
       </button>
