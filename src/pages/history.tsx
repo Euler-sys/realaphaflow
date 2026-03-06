@@ -130,9 +130,11 @@ const TransactionHistory: React.FC = () => {
   {(txn.type ? txn.type.charAt(0).toUpperCase() + txn.type.slice(1) : "Daily ROI Credit")}
 </td>
 
-                  <td className="py-2 px-4 text-sm text-gray-700">
-                    ${typeof txn.amount === "string" ? parseFloat(txn.amount) : txn.amount}
-                  </td>
+                <td className="py-2 px-4 text-sm text-gray-700">
+  $
+  {(typeof txn.amount === "string" ? parseFloat(txn.amount) : txn.amount)
+    ?.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+</td>
                   <td className="py-2 px-4 text-sm text-gray-700">{txn.plan}</td>
                   <td className="py-2 px-4 text-sm text-gray-700">{txn.method.toUpperCase()}</td>
                   <td className="py-2 px-4 text-sm">
