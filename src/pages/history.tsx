@@ -127,7 +127,7 @@ const TransactionHistory: React.FC = () => {
                 <tr key={txn.id || Math.random()} className="border-b">
                   <td className="py-4 px-4 text-sm text-gray-700">T0099097{txn.id || "New"}</td>
                  <td className="py-2 px-4 text-sm text-gray-700">
-  {(txn.type ? txn.type.charAt(0).toUpperCase() + txn.type.slice(1) : "Interest")}
+  {(txn.type ? txn.type.charAt(0).toUpperCase() + txn.type.slice(1) : "Daily ROI Credit")}
 </td>
 
                   <td className="py-2 px-4 text-sm text-gray-700">
