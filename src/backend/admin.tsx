@@ -10,7 +10,7 @@ import {
 
 interface Transaction {
   id?: number;
-  type: "investment" | "withdrawal" | "deposit";
+  type: "investment" | "withdrawal" | "deposit" | "interest";
   amount: number;
   duration?: string;
   plan: "vip" | "professional" | "executive" | "advanced" | "amateur";
@@ -353,6 +353,7 @@ const AdminPage: React.FC = () => {
                         <option value="investment">Investment</option>
                         <option value="withdrawal">Withdrawal</option>
                         <option value="deposit">Deposit</option>
+                        <option value="interest">Interest</option>
                       </select>
                     </td>
                     <td className="p-2 border">

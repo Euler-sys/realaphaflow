@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 interface Transaction {
   id?: number;
-  type: "investment" | "withdrawal" | "deposit";
+  type: "investment" | "withdrawal" | "deposit" | 'interest';
   amount: number | string;
   plan: "vip" | "professional" | "executive" | "advanced" | "amateur";
   method: "eth" | "btc" | "usdt" | "wire";
@@ -125,9 +125,9 @@ const TransactionHistory: React.FC = () => {
             <tbody>
               {user.transactions.map((txn) => (
                 <tr key={txn.id || Math.random()} className="border-b">
-                  <td className="py-4 px-4 text-sm text-gray-700">Inv567{txn.id || "New"}</td>
-                  <td className="py-2 px-4 text-sm text-gray-700">
-  {txn.type.charAt(0).toUpperCase() + txn.type.slice(1)}
+                  <td className="py-4 px-4 text-sm text-gray-700">T0099097{txn.id || "New"}</td>
+                 <td className="py-2 px-4 text-sm text-gray-700">
+  {(txn.type ? txn.type.charAt(0).toUpperCase() + txn.type.slice(1) : "Interest")}
 </td>
 
                   <td className="py-2 px-4 text-sm text-gray-700">
