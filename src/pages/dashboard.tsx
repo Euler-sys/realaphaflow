@@ -27,7 +27,7 @@ import person from "../assets/person_1.jpg";
 import BottomNav from "./stickyNav";
 import BottomNav2 from "./bottomnav2";
 import TransactionHistory from "./history";
-import CoinGeckoWidget from "../Home/coingecko";
+// import CoinGeckoWidget from "../Home/coingecko";
 import ForexCrossRatesWidget from "../components/forex";
 import CryptoMarketScreener from "../Home/crypto";
 // import SupportBot from "../components/support";
